@@ -120,17 +120,56 @@ public class Aula9ex extends JFrame{
        GridBagLayout gbl = new GridBagLayout();
        GridBagConstraints gbc = new GridBagConstraints();
        principal.setLayout(gbl);
+       gbc.anchor = GridBagConstraints.CENTER;
        gbc.gridx = 0;
        gbc.gridy = 0;
        gbc.gridheight = 1;
        gbc.gridwidth = 1;
        gbc.fill = GridBagConstraints.NONE;
-       gbl.setConstraints(lbl01, gbc);
+       
        principal.add(lbl01);
+       gbl.setConstraints(lbl01, gbc);
+       
+       principal.add(lbl02);
+       gbc.gridy=1;
+       gbl.setConstraints(lbl02, gbc);
+       
+       principal.add(lbl03);
+       gbc.gridy=2;
+       gbl.setConstraints(lbl03, gbc);
+       
+       principal.add(lbl04);
+       gbc.gridy=3;
+       gbl.setConstraints(lbl04, gbc);
+       
+       
        principal.add(txt01);
        gbc.gridx = 1;
+       gbc.gridy = 0;
        gbc.fill = GridBagConstraints.HORIZONTAL;
+       gbc.weightx =2;
        gbl.setConstraints(txt01, gbc);
+       
+       principal.add(txt02);
+       gbc.gridx = 1;
+       gbc.gridy = 1;
+       gbc.fill = GridBagConstraints.HORIZONTAL;
+       gbc.weightx =2;
+       gbl.setConstraints(txt02, gbc);
+       
+       principal.add(txt03);
+       gbc.gridx = 1;
+       gbc.gridy = 2;
+       gbc.fill = GridBagConstraints.HORIZONTAL;
+       gbc.weightx =2;
+       gbl.setConstraints(txt03, gbc);
+       
+       principal.add(txt04);
+       gbc.gridx = 1;
+       gbc.gridy = 3;
+       gbc.fill = GridBagConstraints.HORIZONTAL;
+       gbc.weightx =2;
+       gbl.setConstraints(txt04, gbc);
 //       principal.add(lbl02);
 //       principal.add(txt02);
 //       principal.add(lbl03);
