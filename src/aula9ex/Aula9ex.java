@@ -7,6 +7,9 @@ package aula9ex;
 
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.GridLayout;
 import java.awt.HeadlessException;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -32,8 +35,10 @@ public class Aula9ex extends JFrame{
     public Aula9ex() throws HeadlessException {
         super("Exemplos de Layout");
 //        configuraFlowLayout();
-        configuraBorderLayout();
-        configuraLayoutAbsoluto();
+//        configuraBorderLayout();
+//        configuraLayoutAbsoluto();
+//        configuraGridLayout();
+        configuraGridBagLayout();
         add(principal);
     }
 
@@ -97,6 +102,41 @@ public class Aula9ex extends JFrame{
        principal.add(txt03);
        principal.add(lbl04);
        principal.add(txt04);
+    }
+
+    private void configuraGridLayout() {
+       principal.setLayout(new GridLayout(4,2));
+       principal.add(lbl01);
+       principal.add(txt01);
+       principal.add(lbl02);
+       principal.add(txt02);
+       principal.add(lbl03);
+       principal.add(txt03);
+       principal.add(lbl04);
+       principal.add(txt04);
+    }
+
+    private void configuraGridBagLayout() {
+       GridBagLayout gbl = new GridBagLayout();
+       GridBagConstraints gbc = new GridBagConstraints();
+       principal.setLayout(gbl);
+       gbc.gridx = 0;
+       gbc.gridy = 0;
+       gbc.gridheight = 1;
+       gbc.gridwidth = 1;
+       gbc.fill = GridBagConstraints.NONE;
+       gbl.setConstraints(lbl01, gbc);
+       principal.add(lbl01);
+       principal.add(txt01);
+       gbc.gridx = 1;
+       gbc.fill = GridBagConstraints.HORIZONTAL;
+       gbl.setConstraints(txt01, gbc);
+//       principal.add(lbl02);
+//       principal.add(txt02);
+//       principal.add(lbl03);
+//       principal.add(txt03);
+//       principal.add(lbl04);
+//       principal.add(txt04);
     }
     
 }
