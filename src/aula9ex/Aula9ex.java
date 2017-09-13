@@ -11,6 +11,7 @@ import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.GridLayout;
 import java.awt.HeadlessException;
+import javax.swing.Box;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -38,7 +39,9 @@ public class Aula9ex extends JFrame{
 //        configuraBorderLayout();
 //        configuraLayoutAbsoluto();
 //        configuraGridLayout();
-        configuraGridBagLayout();
+//        configuraGridBagLayout();
+//        configuraHorizontalBoxLayout();
+        configuraVerticalBoxLayout();
         add(principal);
     }
 
@@ -121,6 +124,8 @@ public class Aula9ex extends JFrame{
        GridBagConstraints gbc = new GridBagConstraints();
        principal.setLayout(gbl);
        gbc.anchor = GridBagConstraints.CENTER;
+       gbc.ipadx=10;
+       gbc.ipady= 10;
        gbc.gridx = 0;
        gbc.gridy = 0;
        gbc.gridheight = 1;
@@ -141,7 +146,7 @@ public class Aula9ex extends JFrame{
        principal.add(lbl04);
        gbc.gridy=3;
        gbl.setConstraints(lbl04, gbc);
-       
+       gbc.ipady= 0;
        
        principal.add(txt01);
        gbc.gridx = 1;
@@ -176,6 +181,31 @@ public class Aula9ex extends JFrame{
 //       principal.add(txt03);
 //       principal.add(lbl04);
 //       principal.add(txt04);
+    }
+
+    private void configuraHorizontalBoxLayout() {
+       Box horizontal = Box.createHorizontalBox();
+       horizontal.add(lbl01);
+       horizontal.add(txt01);
+       horizontal.add(lbl02);
+       horizontal.add(txt02);
+       horizontal.add(lbl03);
+       horizontal.add(txt03);
+       horizontal.add(lbl04);
+       horizontal.add(txt04);
+       principal.add(horizontal);
+    }
+    private void configuraVerticalBoxLayout() {
+       Box vertical = Box.createVerticalBox();
+       vertical.add(lbl01);
+       vertical.add(txt01);
+       vertical.add(lbl02);
+       vertical.add(txt02);
+       vertical.add(lbl03);
+       vertical.add(txt03);
+       vertical.add(lbl04);
+       vertical.add(txt04);
+       principal.add(vertical);
     }
     
 }
